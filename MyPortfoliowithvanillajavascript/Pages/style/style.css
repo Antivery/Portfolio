@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+body{
+    background: #212121;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+header{
+    display:block;
+    position: relative;
+    display: block;
+    background: #212121;
+    min-height: 80vh;
+margin-bottom: 5rem;
+}
+.navbar{
+    display:block;
+}
+ .nav-bar{
+    opacity: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 900;
+    background: #21212157;
+}
+.navbar-nav{
+    display: flex;
+    align-items: center;
+    margin-left: 50%;
+    height: 2rem;
+}
+#navbar-content{
+    display: flex !important;
+    flex-basis: auto;
+}
+.nav-item{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    list-style:none;
+    font-style: normal;
+    margin-right: 2rem;
+}
+
+.nav-item .nav-link:active{
+    color:#0ff;
+    font-weight:700;
+}
+
+.nav-item:last-of-type{
+    margin-right:0;
+    background:#29FAF8;
+    padding:1.4rem 4.6rem;
+    box-shadow:0 16px 16px rgba(51,51,51,.25);
+    border-radius:30px
+}
+ 
+.nav-link{
+    color:white;
+    padding-right: .5rem;
+padding-left: .5rem;
+text-decoration: none;
+}
+
+.waving{
+    height: 50px;
+    width: 50px;
+}
+.header-content-text-wrapper{
+width: 35rem;
+max-width: 100%;
+margin: auto;
+}
+.header-content-text-wrapper h1:first-of-type{
+font-family: SF Pro Display,sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 7.2rem;
+line-height: 8.6rem;
+color: #fff;
+margin-bottom: 1.6rem;
+}
+.header-content-text-wrapper p:first-of-type{
+    text-transform: uppercase;
+font-family: SF Pro Display,sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 1.6rem;
+line-height: 1.9rem;
+color: #fff;
+margin-bottom: 1.6rem;
+display: flex;
+align-items: center;
+}
+.header-content-text-wrapper p:last-of-type{
+    font-family: SF Pro Display,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: #fff;
+    margin-bottom: 3.2rem;
+}
+.header-content-text-wrapper h3{
+    color:#29FAF8 ;
+}
+
+.header-content{
+    width: 1140px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+}
+
+
+.intro{
+    color: white;
+  font-size: 30px;
+  transform: translateY(20%);
+ 
+}
+.header-content-hero{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-bottom: 7rem;
+    position: relative;    
+    }
+
+/*
+about me css below
+*/
+
+.about-me {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(36, 36, 36);
+    height: 100%;
+    padding: 2rem;
+}
+
+section .about-me-image{
+    margin-right: 6.2rem;
+}
+.about-me-text-wrap{
+    max-width: 30rem;
+}
+section .about-me-text-wrap .about-me-resume{
+    height: 50px;
+    width: 250px;
+    background-color:#29FAF8;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display:flex ;
+    border-radius: 3rem;
+    text-decoration: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.me-img{
+    height: 500px;
+   display: block;
+   margin: auto;
+    border-radius: 10%;
+    margin-top: 5%;
+}
+
+.who-I-am{
+display: flex;
+align-items: center;
+
+}
+.who-I-am p{
+    margin-right: 1rem;
+}
+
+.who-I-am .who-i-am-bar{
+    height: 3px;
+    background-color: #29FAF8;
+    width: 100px;
+}
+
+/*
+My services css
+*/
+
+.my-services{
+    height: 100%;
+    padding: 2rem;
+    margin: auto;
+    
+}
+.my-services-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
+    .my-services-title p{
+        margin-right: 1rem;
+    }
+    
+    .my-services-title .my-services-bar{
+        height: 3px;
+        background-color: #29FAF8;
+        width: 100px;
+    }
+.service-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-content:center;
+
+}
+.service-card{
+    height: 300px;
+    width: 300px;
+    background-color: rgb(49, 49, 49);
+    margin: 1rem;
+    box-shadow: 0 1.6rem 2.4rem rgba(0,0,0,.25);
+    border-radius: .8rem;
+    padding: 1rem;
+    position: relative;
+    
+    
+}
+.service-card.last-of-type {
+    margin-bottom:0;
+   }
+
+.service-card:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:1rem;
+    left:0;
+    border-radius:0 0 .8rem .8rem;
+   bottom: 0;
+
+   } 
+
+   .service-card.web-development:after {
+    background-color:#00aeff;
+   }
+   .service-card.no-code-development:after {
+    background-color:#e3cf1f;
+   }
+   .service-card.digital-marketing:after {
+    background-color:#8838b4;
+   }
+
+   .service-card:hover{
+       background-color:#29FAF8 ;
+       color:black;
+       transition:all .05s ease;
+       transform: scale(1.1);
+       cursor: pointer;
+       transform-origin: center;
+   }
+ 
+
+.service-icon{
+    height: 60px;
+}
+/*
+#no-code-service-img-wrapper{
+    background-color: rgba(168, 166, 24, 0.555);
+}
+#digital-marketing-service-img-wrapper{
+    background-color: rgba(255, 59, 239, 0.438);
+}
+#web-dev-service-img-wrapper{
+    background-color: rgba(243, 105, 105, 0.349);
+}
+.service-img-wrapper{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-services-title{
+    display: flex;
+    align-items: center;
+    
+    }
+.my-services-title p{
+        margin-right: 1rem;
+    }
+    
+.my-services-bar{
+        height: 3px;
+        background-color: #29FAF8;
+        width: 100px;
+}
+*/
+
+
+/*
+My workflow css
+*/
+
+.work-flow{
+ background-color: rgb(36, 36, 36);
+width: 1140px;
+margin: auto;
+height: auto;
+flex-direction: column;
+display: flex;
+width: auto;
+}
+.my-workflow-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    }
+.my-workflow-title p{
+        margin-right: 1rem;
+    }
+    
+.my-workflow-bar{
+        height: 3px;
+        background-color: #29FAF8;
+        width: 100px;
+}
+
+.work-flow-cards{
+    display: flex;
+    justify-items: center;
+    justify-content: space-around;
+}
+
+.work-flow-card{
+    height: 15rem;
+    width: 15rem;
+    background-color: rgb(49, 49, 49);
+    margin: 2rem;
+    box-shadow: 0 1.6rem 2.4rem rgba(0,0,0,.25);
+    border-radius: .8rem;
+    padding: 1rem;
+    position: relative;
+}
+.workflow-icon{
+    height: 60px;
+}
+
+.work-flow-card:after {
+    content:"";
+    position:absolute;
+    width:100%;
+    height:1rem;
+    left:0;
+    border-radius:0 0 .8rem .8rem;
+   bottom: 0;
+
+   } 
+
+   .work-flow-card.discover:after {
+    background-color:#00aeff;
+   }
+   .work-flow-card.define:after {
+    background-color:#e3cf1f;
+   }
+   .work-flow-card.ideate:after {
+    background-color:#f55454;
+   }
+   .work-flow-card.prototype:after {
+    background-color:#8838b4;
+   }
+   .work-flow-card.implament:after {
+    background-color:#00aeff;
+   }
+   
+
+   .work-flow-card:hover{
+       background-color:#29FAF8 ;
+       color:black;
+       transition:all .05s ease-in-out;
+       transform: scale(1.1);
+       cursor: pointer;
+       transform-origin: center;
+   }
+
+
+/*
+My projects
+*/
+
+.portfolio{
+margin: 5rem;
+}
+.portfolio-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1140px;
+    margin: auto;
+}
+
+.project-container{
+    margin: 1rem;
+    background-color: rgb(49, 49, 49);
+    width: 20rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+    border-radius: 5px;
+    transition: all 1s ease;
+    height: 30rem;
+    
+}
+
+.my-project-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+.my-project-title p{
+        margin-right: 1rem;
+    }
+    
+.my-project-bar{
+        height: 3px;
+        background-color: #29FAF8;
+        width: 100px;
+}
+
+/*
+contact info
+
+*/
+.contact{
+    width: 1200px;
+    margin: auto;  
+}
+
+.contact-wrapper{
+    display: flex;
+ justify-content: space-around;
+}
+.social-links{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.social-links .contact-info{
+   height: 2rem;
+    width: 20rem;
+    background-color: royalblue;  ;
+}
+
+#social-icon-img{
+    height: 3rem;
+    width: 3rem;
+}
+
+form{
+    width: 49%;
+    height: 400px;
+    display: flex;
+flex-wrap: wrap;
+}
+.first-name, .email,.phone-number{
+    height: 3rem;
+    border-radius: 2rem;
+}
+form .email-phone-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.email, .phone-number{
+    width: 49%;
+    
+}
+.first-name{
+    width: 100%;
+}
+textarea{
+width: 100%;
+border-radius: 2rem;
+padding: 1.5rem 1rem ;
+}
+form input{
+    padding-left: 1.5rem;
+}
+
+
+.video-container{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    }
+    
+#myVideo{
+    height: auto;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+
+} 
