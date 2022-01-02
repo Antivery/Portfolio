@@ -442,6 +442,9 @@ contact info
     width: 1200px;
     margin: auto;  
 }
+.contact-form input{
+    margin-bottom: 1rem;
+}
 
 .contact-wrapper{
     display: flex;
@@ -451,14 +454,29 @@ contact info
     height: 400px;
     width: 400px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 
 }
 .social-links .contact-info{
-   height: 2rem;
-    width: 20rem;
-    background-color: royalblue;  ;
+display: flex  ;
+margin-bottom: 4rem;
+margin-right: 2rem;
 }
+.social-links .img-wrapper{
+    background-color: #0ff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;    
+    margin-right: 2rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.social-links img{
+height: 30px;
+width: 30px;
+}
+
 
 #social-icon-img{
     height: 3rem;
