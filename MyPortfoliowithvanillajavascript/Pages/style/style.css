@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+main{
+    margin-bottom: 15rem;
+}
+
 body{
     background: #212121;
     color: white;
@@ -50,13 +54,25 @@ margin-bottom: 5rem;
 }
 
 .nav-item:last-of-type{
-    margin-right:0;
-    background:#29FAF8;
-    padding:1.4rem 4.6rem;
-    box-shadow:0 16px 16px rgba(51,51,51,.25);
-    border-radius:30px
+    height: 50px;
+    width: 250px;
+    background-color:#29FAF8;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display:flex ;
+    border-radius: 3rem;
+    text-decoration: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
- 
+
+.nav-item:hover:last-of-type{
+    border-color:#29FAF8;
+    background-color: white;
+    text-decoration:none;
+   color:#29FAF8; 
+}
 .nav-link{
     color:white;
     padding-right: .5rem;
@@ -152,7 +168,7 @@ section .about-me-image{
 .about-me-text-wrap{
     max-width: 30rem;
 }
-section .about-me-text-wrap .about-me-resume{
+.about-me-resume{
     height: 50px;
     width: 250px;
     background-color:#29FAF8;
@@ -164,6 +180,13 @@ section .about-me-text-wrap .about-me-resume{
     text-decoration: none;
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.about-me-resume:hover{
+    text-decoration:none;
+    color:#29FAF8;
+    border-color:#29FAF8;
+    background-color: white;
 }
 
 .me-img{
@@ -439,8 +462,8 @@ contact info
 
 */
 .contact{
-    width: 1200px;
     margin: auto;  
+    background-color: rgb(36, 36, 36);
 }
 .contact-form input{
     margin-bottom: 1rem;
@@ -449,6 +472,8 @@ contact info
 .contact-wrapper{
     display: flex;
  justify-content: space-around;
+ margin: auto;
+ width: 1200px;
 }
 .social-links{
     height: 400px;
@@ -485,7 +510,6 @@ width: 30px;
 
 form{
     width: 49%;
-    height: 400px;
     display: flex;
 flex-wrap: wrap;
 }
@@ -509,11 +533,83 @@ textarea{
 width: 100%;
 border-radius: 2rem;
 padding: 1.5rem 1rem ;
+background-color: #212121;
+color:#fff;
+border: .1rem solid white;
+
 }
 form input{
     padding-left: 1.5rem;
+    background-color: #212121;
+color:#fff;
+border: .1rem solid white;
+}
+form input:focus, textarea:focus{
+    border: .1rem solid #0ff;
+    box-shadow: none;
+    outline: none;
 }
 
+form button{
+height: 50px;
+width: 250px;
+color:#fff;
+ background:#29FAF8;
+ border-color:#29FAF8;
+justify-content: center;
+align-items: center;
+display: flex;
+display: -webkit-box;
+display: -ms-flexbox;
+overflow: hidden;
+-webkit-box-align: center;
+-ms-flex-align: center;
+align-items: center;
+-webkit-box-pack: center;
+-ms-flex-pack: center;
+cursor: pointer;
+border-radius: 3rem;
+text-decoration: none;
+margin-top: 2rem;
+margin-bottom: 2rem;
+border: none;
+
+}
+
+.submit-button:hover{
+    text-decoration:none;
+    color:#29FAF8;
+    border-color:#29FAF8;
+    background-color: white;
+
+}
+/*
+footer
+
+*/
+footer{
+    height: 200px;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(36, 36, 36);
+    border-radius: 60% 60% 0 0;
+    padding: 3rem;
+}
+
+
+
+
+.social-img{
+    width: 40px;
+    height: 40px;
+}
+
+.footer-content-wrapper{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
 
 .video-container{
     height: 100%;
@@ -534,3 +630,4 @@ form input{
     z-index: -1;
 
 } 
+
