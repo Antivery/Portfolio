@@ -48,31 +48,18 @@ margin-bottom: 5rem;
     margin-right: 2rem;
 }
 
+.highlight {
+    border-bottom: 4px solid #29FAF8;
+  }
+
 .nav-item .nav-link:active{
     color:#0ff;
     font-weight:700;
 }
 
-.nav-item:last-of-type{
-    height: 50px;
-    width: 250px;
-    background-color:#29FAF8;
-    color: white;
-    justify-content: center;
-    align-items: center;
-    display:flex ;
-    border-radius: 3rem;
-    text-decoration: none;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
 
-.nav-item:hover:last-of-type{
-    border-color:#29FAF8;
-    background-color: white;
-    text-decoration:none;
-   color:#29FAF8; 
-}
+
+
 .nav-link{
     color:white;
     padding-right: .5rem;
@@ -152,7 +139,7 @@ align-items: center;
 about me css below
 */
 
-.about-me {
+#about-me {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -333,7 +320,7 @@ My services css
 My workflow css
 */
 
-.work-flow{
+#work-flow{
  background-color: rgb(36, 36, 36);
 width: 1140px;
 margin: auto;
@@ -420,7 +407,7 @@ width: auto;
 My projects
 */
 
-.portfolio{
+#portfolio{
 margin: 5rem;
 }
 .portfolio-wrapper{
@@ -461,7 +448,7 @@ margin: 5rem;
 contact info
 
 */
-.contact{
+#contact{
     margin: auto;  
     background-color: rgb(36, 36, 36);
 }
@@ -596,6 +583,8 @@ footer{
     border-radius: 60% 60% 0 0;
     padding: 3rem;
 }
+
+
 
 
 
