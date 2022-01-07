@@ -500,7 +500,7 @@ form{
     display: flex;
 flex-wrap: wrap;
 }
-.first-name, .email,.phone-number{
+#name, .email,.phone-number{
     height: 3rem;
     border-radius: 2rem;
 }
@@ -513,7 +513,7 @@ form .email-phone-wrapper{
     width: 49%;
     
 }
-.first-name{
+#name{
     width: 100%;
 }
 textarea{
@@ -583,10 +583,6 @@ footer{
     border-radius: 60% 60% 0 0;
     padding: 3rem;
 }
-
-
-
-
 
 
 .social-img{
