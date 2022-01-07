@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "This a portfolio project for Athony Ivery",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":" nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antivery/Portfolio.git"
+  },
+  "author": "Anthony Ivery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antivery/Portfolio/issues"
+  },
+  "homepage": "https://github.com/Antivery/Portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
