@@ -1,20 +1,34 @@
 $(() => {
+
     $('#send').click((event) =>{
         event.preventDefault();
-        addMessages({name:"Anthony", message:"hi"})
+        var contactForm = 
+        { 
+            name: $("#name").val(), 
+            email: $("#e-mail").val(),
+            phoneNumber: $("#phoNo").val(),
+            message: $("#message").val()
+    
+        }
+        console.log(contactForm)
+        postContactForm(contactForm)
     })
-         
-    getMessages()
+
+    getContactForm()
 })
 
-function addMessages(message){
-    $("#message-div").append(`<h3>${message.message}</h3> <p>${message.name}</p>`)
+
+function addContactForm(contactForm){
+    $("#message-div").append(`<h3>${contactForm.email}</h3> <p>${contactForm.name}</p> <p>${contactForm.phonNumber}</p> <p>${contactForm.message}</p>`)
 }
 
-function getMessages(){
-$.get("http://localhost:3000/messages",(data) =>{
-    data.forEach(addMessages)
-});
-
+function getContactForm(){
+$.get("http://localhost:3000/contactForm",(data) =>{
+    data.forEach(addContactForm)
+})
 
 }
+
+
+function postContactForm(contactForm){
+    $.post("http://localhost:3000/contactForm",contactForm)}
