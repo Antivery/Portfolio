@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Antivery/Portfolio#readme",
   "dependencies": {
     "express": "^4.17.2",
-    "mongoose": "^6.1.5"
+    "mongoose": "^6.1.5",
+    "nodemailer": "^6.7.2",
+    "socket.io": "^4.4.1"
   }
 }

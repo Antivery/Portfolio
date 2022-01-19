@@ -77,7 +77,6 @@ if(elem){
     document.querySelector('.contact-form').reset();
  }
 
-
  
 
  

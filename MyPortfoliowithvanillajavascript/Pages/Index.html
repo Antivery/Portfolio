@@ -5,7 +5,7 @@
 			  src="https://code.jquery.com/jquery-3.6.0.js"
 			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 			  crossorigin="anonymous"></script>
-		
+              <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
         <script type="text/javascript"  src="js/front-end.js"></script>
         <script type="text/javascript"  src="js/app.js"></script>
         <script src="/socket.io/socket.io.js"></script>
@@ -72,14 +72,16 @@
     <!--About me-->
     <main>
     <section id="about-me" class="container"> 
+         <div class="who-I-am">
+        <p>Who I Am</p>
+        <span class="who-i-am-bar"></span>
+    </div>
+    <div class=all-me>
 <div class="about-me-image">
     <img src="content/img/C071F348-ECE1-4795-A948-B2F9BAD84E89.JPG" alt="" class="me-img">
 </div>
 <div class="about-me-text-wrap">
-    <div class="who-I-am">
-        <p>Who I Am</p>
-        <span class="who-i-am-bar"></span>
-    </div>
+   
         <span  class="title-container">
             <h3>About Me</h3>
         </span>
@@ -107,6 +109,7 @@
                         Download Resume
                     </span> 
                 </a>
+</div>
 </div>
     </section>
     <!--My services section-->
@@ -220,17 +223,14 @@
     -->
     <section id="portfolio">
         <div class="my-project-title">
-            <p>My Work</p>
+            <p>Some Work</p>
             <span class="my-project-bar"></span>
         </div>
-        <div class="flex-container portfolio-wrapper">
-            <div class="project-container" id="project-1"></div>
-            <div class="project-container" id="project-2"></div>
-            <div class="project-container" id="project-3"></div>
-            <div class="project-container" id="project-4"></div>
-            <div class="project-container" id="project-5"></div>
-            <div class="project-container" id="project-6"></div>
-        </div>
+       <div class="ig-container">
+               <div id="instafeed">
+
+               </div>
+           </div>
     </section>
 
     <!--contact me -->
