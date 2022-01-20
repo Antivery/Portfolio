@@ -8,10 +8,10 @@ $(() => {
             email: $("#e-mail").val(),
             phoneNumber: $("#phoNo").val(),
             message: $("#message").val()
-    
         }
         console.log(contactForm)
         postContactForm(contactForm)
+        document.getElementById("contact-form").reset()
     })
     getContactForm()
 })
@@ -27,9 +27,11 @@ $.get("http://localhost:3000/contactForm",(data) =>{
 
 }
 
-// instagram feed
 function postContactForm(contactForm){
     $.post("http://localhost:3000/contactForm",contactForm)}
+    
+//instagram feed
+
 
 $(() =>{
     var MyFeed = new Instafeed({

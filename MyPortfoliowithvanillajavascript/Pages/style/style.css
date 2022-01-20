@@ -4,7 +4,7 @@ html {
     scroll-behavior: smooth;
   }
 main{
-    margin-bottom: 15rem;
+    margin-bottom: 4rem;
 }
 
 body{
@@ -40,7 +40,7 @@ margin-bottom: 5rem;
     height: 2rem;
 }
 #navbar-content{
-    display: flex !important;
+    display: flex;
     flex-basis: auto;
 }
 .nav-item{
@@ -60,9 +60,6 @@ margin-bottom: 5rem;
     color:#0ff;
     font-weight:700;
 }
-
-
-
 
 .nav-link{
     color:white;
@@ -122,7 +119,11 @@ align-items: center;
     margin-left: auto;
     margin-top: 10%;
 }
-
+@media(max-width: 1200px){
+    .header-content{
+        max-width: 100%;
+    }
+}
 
 .intro{
     color: white;
@@ -132,11 +133,10 @@ align-items: center;
 }
 .header-content-hero{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
     padding-bottom: 7rem;
-    position: relative;    
+    justify-content: center;
     }
 
 /*
@@ -150,6 +150,10 @@ about me css below
 section .about-me-image{
     margin-right: 6.2rem;
 }
+
+
+
+
 .about-me-text-wrap{
     max-width: 30rem;
 }
@@ -179,6 +183,7 @@ section .about-me-image{
    margin: auto;
     border-radius: 10%;
     margin-top: 5%;
+    width: 300px;
 }
 .all-me{
     display: flex;
@@ -204,6 +209,19 @@ justify-content: center;
     background-color: #29FAF8;
     width: 100px;
 }
+
+
+@media(max-width: 800px){
+    .about-me-image{
+        margin: auto !important;
+    }
+}
+@media(max-width: 315px){
+    .me-img{
+        width: 100%;
+    }
+}
+
 
 /*
 My services css
@@ -478,8 +496,14 @@ contact info
     width: 400px;
     display: flex;
     flex-direction: column;
-
 }
+
+@media(max-width: 800px){
+    .social-links{
+        margin: 2rem;
+    }
+}
+
 .social-links .contact-info{
 display: flex  ;
 margin-bottom: 4rem;
@@ -579,8 +603,22 @@ border: none;
     color:#29FAF8;
     border-color:#29FAF8;
     background-color: white;
-
 }
+
+@media (max-width: 1200px){
+    .contact-wrapper{
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 800px){
+     form{
+       width: 80%;
+       justify-content: center;
+    }
+}
+
 /*
 footer
 
@@ -609,8 +647,8 @@ footer{
 
 /*
 IG FEED
-
 */
+
 
 .ig-feed-image{
     margin: 1rem;
@@ -621,14 +659,22 @@ IG FEED
     box-shadow: 0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
-#instafeed{
+#instafeed{  
     display: flex ;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 1140px;
+    justify-content: space-around;
     margin: auto;
+    width: 1140px;
+}
+@media (max-width: 1200px){
+    #instafeed{
+   max-width: 100%;
+}
 }
 
-
-
-
+@media (max-width: 345px){
+    .ig-feed-image{
+   max-width: 100%;
+   margin: ;
+}
+}
