@@ -8,13 +8,13 @@ var http = require("http").Server(app)
 var io = require("socket.io")(http)
 var nodemailer = require("nodemailer");
 const { info } = require('console');
-
+const config = require('config');
 
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
-mongoose.connect(dbUrl,(err) => {
+mongoose.connect(config.get('App.mongoDB.connectionString'),(err) => {
     console.log('connected' , err);
 })
 
@@ -70,8 +70,8 @@ transporter.sendMail(mailOptions, (error, info) =>{
 io.on('connection', (socket) => {
     console.log('user connected')
 })
+const server = config.get('App.webServer.port')
 
-
-var server = http.listen(3000, () =>{
-    console.log('server is listening', server.address().port)
+http.listen(server, () =>{
+    console.log('server is listening to port ' + server)
 });

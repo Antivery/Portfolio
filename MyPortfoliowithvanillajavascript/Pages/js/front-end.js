@@ -21,7 +21,7 @@ const highlightNavItem = () => {
     const portfolioSection = document.querySelector('#portfolio-section')
     const contactSection = document.querySelector('#contact-section')
     let scrollPos = window.scrollY
-    
+   
 
 if( scrollPos < 532){
     homeSection.classList.add('highlight')
@@ -30,7 +30,7 @@ if( scrollPos < 532){
     portfolioSection.classList.remove('highlight')
     contactSection.classList.remove('highlight')
     return;
-}else if (scrollPos < 1190){
+}else if (scrollPos < 1461){
     bioSection.classList.add('highlight')
     homeSection.classList.remove('highlight')
     servicesSection.classList.remove('highlight')
@@ -38,7 +38,7 @@ if( scrollPos < 532){
     portfolioSection.classList.remove('highlight')
     return;
 }
-else if (scrollPos < 2100){
+else if (scrollPos < 2278){
    servicesSection.classList.add('highlight')
     bioSection.classList.remove('highlight')
     portfolioSection.classList.remove('highlight')
@@ -47,7 +47,7 @@ else if (scrollPos < 2100){
     return;
 }
 
-else if(scrollPos < 3268){
+else if(scrollPos < 3796){
     portfolioSection.classList.add('highlight')
     servicesSection.classList.remove('highlight')
     contactSection.classList.remove('highlight')
@@ -55,7 +55,7 @@ else if(scrollPos < 3268){
     bioSection.classList.remove('highlight')
     return;
 }
-else if(scrollPos > 3308){
+else if(scrollPos > 3796){
     contactSection.classList.add('highlight')
     portfolioSection.classList.remove('highlight')
     homeSection.classList.remove('highlight')
@@ -69,10 +69,9 @@ if(elem){
     // allow to find scrren positon to help keep nav items active
 };
 
-
  window.addEventListener('scroll', highlightNavItem);
  window.addEventListener('click', highlightNavItem );
-
+ 
  
 
 
