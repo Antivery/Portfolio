@@ -1,3 +1,16 @@
+  
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.navbar-nav');
+ 
+const mobileMenuToggle = () =>{
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+    
+};
+menu.addEventListener('click', mobileMenuToggle);
+
+console.log(mobileMenuToggle)
+
 // Show active on nav when scrolling
 
 const highlightNavItem = () => {
@@ -8,7 +21,7 @@ const highlightNavItem = () => {
     const portfolioSection = document.querySelector('#portfolio-section')
     const contactSection = document.querySelector('#contact-section')
     let scrollPos = window.scrollY
-    console.log(scrollPos);
+    
 
 if( scrollPos < 532){
     homeSection.classList.add('highlight')
@@ -17,7 +30,7 @@ if( scrollPos < 532){
     portfolioSection.classList.remove('highlight')
     contactSection.classList.remove('highlight')
     return;
-}else if (scrollPos < 1216){
+}else if (scrollPos < 1190){
     bioSection.classList.add('highlight')
     homeSection.classList.remove('highlight')
     servicesSection.classList.remove('highlight')
@@ -52,18 +65,20 @@ else if(scrollPos > 3308){
 }
 if(elem){
     elem.classList.remove('highlight')
-}
-
-
+};
     // allow to find scrren positon to help keep nav items active
-    
-    console.log(scrollPos);
-}
+};
+
+
  window.addEventListener('scroll', highlightNavItem);
  window.addEventListener('click', highlightNavItem );
 
- document.querySelector('.contact-form').addEventListener('submit',submitForm);
  
+
+
+ 
+
+
 //  function submitForm(e){
 //     e.preventDefault();
 

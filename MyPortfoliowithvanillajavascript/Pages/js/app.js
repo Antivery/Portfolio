@@ -16,13 +16,13 @@ $(() => {
     getContactForm()
 })
 
-// function addContactForm(contactForm){
-//     $("#message-div").append(`<h3>${contactForm.email}</h3> <p>${contactForm.name}</p> <p>${contactForm.phoneNumber}</p> <p>${contactForm.message}</p>`)
-// }
+//  function addContactForm(contactForm){
+//      $("#message-div").append(`<h3>${contactForm.email}</h3> <p>${contactForm.name}</p> <p>${contactForm.phoneNumber}</p> <p>${contactForm.message}</p>`)
+//  }
 
-function getContactForm(){
+function getContactForm(contactForm){
 $.get("http://localhost:3000/contactForm",(data) =>{
-    data.forEach(addContactForm)
+    data.forEach(contactForm)
 })
 
 }

@@ -41,7 +41,7 @@ margin-bottom: 5rem;
 }
 #navbar-content{
     display: flex;
-    flex-basis: auto;
+    flex-direction: row-reverse;
 }
 .nav-item{
     font-weight: 400;
@@ -67,6 +67,78 @@ margin-bottom: 5rem;
 padding-left: .5rem;
 text-decoration: none;
 }
+
+@media(max-width: 996px){
+    #navbar-content{
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+        display: flex;
+    }
+
+    .navbar-nav{
+        display: grid;
+        grid-template-columns: auto;
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        top:-1000px;
+        opacity: 0;
+        z-index: -1;
+        transition: all 0.5s ease; 
+        justify-content: center;
+    }
+    .navbar-nav.active{
+        background:#212121;
+        top:100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 60vh;
+    }
+    .nav-item{
+        margin-right: 0;
+    }
+
+    .nav-link{
+     text-align: center;
+     display: table;
+     width: 100%;   
+     padding: 0;
+    }
+
+    .navbar__toggle .bar{
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    display: block;
+    cursor: pointer;
+    }
+    
+    #mobile-menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%, 20%);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2){
+        opacity: 0;
+    }
+    #mobile-menu.is-active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    #mobile-menu.is-active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+
+}
+
 
 .waving{
     height: 50px;
@@ -147,7 +219,7 @@ about me css below
     background-color: rgb(36, 36, 36);
 }
 
-section .about-me-image{
+.about-me-image{
     margin-right: 6.2rem;
 }
 
@@ -190,7 +262,6 @@ section .about-me-image{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-
     height: 100%;
     padding: 2rem;
 }
@@ -213,7 +284,7 @@ justify-content: center;
 
 @media(max-width: 800px){
     .about-me-image{
-        margin: auto !important;
+        margin: auto;
     }
 }
 @media(max-width: 315px){
