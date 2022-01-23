@@ -3,7 +3,6 @@ var fs = require("fs")
 var mongoose = require('mongoose')
 var app = express();    
 var bodyParser = require("body-parser")
-var dbUrl = 'mongodb+srv://Antivery:Bigant513@cluster0.2dxmi.mongodb.net/PortfolioSite?retryWrites=true&w=majority'
 var http = require("http").Server(app)
 var io = require("socket.io")(http)
 var nodemailer = require("nodemailer");
