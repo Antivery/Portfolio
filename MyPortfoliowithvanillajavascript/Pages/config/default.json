@@ -7,6 +7,11 @@
 } ,
 "mongoDB":{
 "connectionString":"mongodb+srv://Antivery:Bigant513@cluster0.2dxmi.mongodb.net/PortfolioSite?retryWrites=true&w=majority'"
+},
+"email":{
+"sevice":"gmail",
+"email":"antivery@gmail.com",
+"passWord":"Anti45406!"
 }
 }
   
