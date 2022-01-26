@@ -7,10 +7,7 @@ var bodyParser = require("body-parser")
 var http = require("http").Server(app)
 var io = require("socket.io")(http)
 var nodemailer = require("nodemailer");
-// const { info } = require('console');
-// const config = require('config');
-
-console.log(process.env.EMAIL_SERVICE);
+const { body, validationResults} = require('express-validator')
 
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
@@ -18,7 +15,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 mongoose.connect(process.env.MONGODB_CONNECTION,(err) => {
     console.log('connected' , err);
-    
 })
 
 var ContactForm = mongoose.model('ContactForm', {
@@ -36,7 +32,36 @@ app.get("/contactForm", (req, res) =>{
     
 })
 
-app.post("/contactForm", (req, res) =>{
+app.post("/contactForm", 
+    [
+    check('name')
+    .trim()
+    .isLength({min:3})
+    .escape()
+    .withMessage('A name is required'),
+
+    check('email')
+    .trim()
+    .isLength({min:3})
+    .escape()
+    .isEmail()
+    .normalizeEmail({gmail_remove_dots})
+    .withMessage('Your Email is required'),
+   
+    check('phoneNumber')
+    .trim()
+    .isLength({min:10})
+    .escape(),
+
+    check('message')
+    .trim()
+    .isLength({min:5})
+    .escape()
+    .withMessage('A message is required')
+
+],
+(req, res) =>{
+
     var contactForm = new ContactForm(req.body)
 
     contactForm.save((err) =>{
