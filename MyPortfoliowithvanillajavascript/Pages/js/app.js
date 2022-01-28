@@ -1,3 +1,4 @@
+
 $(() => {
  // email submission
     $('#send').click((event) =>{
@@ -21,7 +22,7 @@ $(() => {
 //  }
 
 function getContactForm(contactForm){
-$.get("http://localhost:3000/contactForm",(data) =>{
+$.get("http://localhost:3000/",(data) =>{
     data.forEach(contactForm)
 })
 
@@ -30,17 +31,6 @@ $.get("http://localhost:3000/contactForm",(data) =>{
 function postContactForm(contactForm){
     $.post("http://localhost:3000/contactForm",contactForm)}
     
-//instagram feed
 
 
-$(() =>{
-    var MyFeed = new Instafeed({
-        get: 'user',
-        userid:'8459256871',
-        limit: 9,
-        template: '<div class="ig-container"> <img class="ig-feed-image" title="{{caption}}" src="{{image}}" /></div>',
-        resolution: 'low_resolution',
-        accessToken: 'IGQVJYbjJ0VS11SXNZAS21wQTZAlQTdCdnpBOTIxRVZAqTzloR1YyVkJ2RTY3OEdXRDhnRHJjYmhCeGlNRnJsRVVHLWV5QlEzNnBFRU1wMlBxSVJIUy1ZAUmVEWUJwZA0RPS0xmNkZALeFNKUU1LbTA0akpBawZDZD'
-    });
-    MyFeed.run();
-})
+

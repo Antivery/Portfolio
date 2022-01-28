@@ -72,7 +72,9 @@ if(elem){
  window.addEventListener('scroll', highlightNavItem);
  window.addEventListener('click', highlightNavItem );
  
- 
+  
+
+
 
 
  

@@ -7,11 +7,13 @@ var bodyParser = require("body-parser")
 var http = require("http").Server(app)
 var io = require("socket.io")(http)
 var nodemailer = require("nodemailer");
-const { body, validationResults} = require('express-validator')
+const { body, validationResult} = require('express-validator')
 
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+
+
 
 mongoose.connect(process.env.MONGODB_CONNECTION,(err) => {
     console.log('connected' , err);
@@ -25,53 +27,55 @@ var ContactForm = mongoose.model('ContactForm', {
 })
 
 
-app.get("/contactForm", (req, res) =>{
+app.get("/", (req, res) =>{
     ContactForm.find({}, (err, contactForms) =>{
         res.send(contactForms)
     })
     
 })
 
-app.post("/contactForm", 
-    [
-    check('name')
+app.post("/",[   
+    body('name')
     .trim()
     .isLength({min:3})
     .escape()
     .withMessage('A name is required'),
 
-    check('email')
+    body('email')
     .trim()
     .isLength({min:3})
     .escape()
     .isEmail()
-    .normalizeEmail({gmail_remove_dots})
+    .normalizeEmail()
     .withMessage('Your Email is required'),
    
-    check('phoneNumber')
+    body('phoneNumber')
     .trim()
     .isLength({min:10})
     .escape(),
 
-    check('message')
+    body('message')
     .trim()
     .isLength({min:5})
     .escape()
-    .withMessage('A message is required')
-
-],
+    .withMessage('A message is required') ],
 (req, res) =>{
+ 
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+ 
+    // var contactForm = new ContactForm(req.body)
 
-    var contactForm = new ContactForm(req.body)
+    // contactForm.save((err) =>{
+    //     if(err)
+    //         sendStatus(500)
 
-    contactForm.save((err) =>{
-        if(err)
-            sendStatus(500)
+    //          io.emit('contactForm', req.body)
+    //          res.sendStatus(200)
 
-             io.emit('contactForm', req.body)
-             res.sendStatus(200)
-
-    })
+    // })
     
 var transporter = nodemailer.createTransport({
     service:process.env.EMAIL_SERVICE,
@@ -97,9 +101,11 @@ transporter.sendMail(mailOptions, (error, info) =>{
 })
 })
 
-io.on('connection', (socket) => {
-    console.log('user connected')
-})
+// io.on('connection', (socket) => {
+//     console.log('user connected')
+// })
+
+
 const server = process.env.SERVER_PORT
 
 http.listen(server, () =>{
