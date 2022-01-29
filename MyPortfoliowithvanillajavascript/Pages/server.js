@@ -12,6 +12,7 @@ const { body, validationResult} = require('express-validator')
 app.use(express.static(__dirname))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
+app.set('view engine', 'ejs')
 
 
 
