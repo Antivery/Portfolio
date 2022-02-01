@@ -70,12 +70,17 @@ text-decoration: none;
 /* .nav-link:hover{
 color: #29FAF8;
 } */
+#lastnav-item{
+    width: 15rem;
+}
+
 
 #lets-work{
     background-color:#29FAF8 ;
     border-radius: 3rem;
-    padding: 1rem 2rem;
-    
+    /* padding: 1rem 2rem; */
+    display: flex;
+    justify-content: center;
 }
 #lets-work:hover{
     background-color:#fff ;
