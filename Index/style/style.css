@@ -764,6 +764,7 @@ border: none;
      form{
        width: 100%;
        justify-content: center;
+       margin: 2rem;
     }
     form input{
         height: 4rem;
