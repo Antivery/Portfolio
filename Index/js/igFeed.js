@@ -5,9 +5,7 @@
       resolution: 'standard_resolution',
       limit: 9,
       template:`<div class="igFeed-container">
-      <div id="#instafeed">
       <img class="ig-feed-image" title={{caption}} src="{{image}}">
-      </div>
      </div>`
     });
     feed.run();

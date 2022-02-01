@@ -29,14 +29,14 @@ $(() => {
 //  }
 
 function getContactForm(contactForm){
-$.get("http://localhost:3000/",(data) =>{
+$.get("https://anthony-ivery-portfolio.herokuapp.com/",(data) =>{
     data.forEach(contactForm)
 })
 
 }
 
 function postContactForm(contactForm){
-    $.post("http://localhost:3000/",contactForm)}
+    $.post("https://anthony-ivery-portfolio.herokuapp.com/",contactForm)}
     
 
 

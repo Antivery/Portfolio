@@ -4,14 +4,18 @@ html {
     scroll-behavior: smooth;
   }
 main{
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 body{
     background: #212121;
     color: white;
     font-family: 'Quicksand', sans-serif;
+
+    
 }
+
+
 
 header{
     display:block;
@@ -21,6 +25,7 @@ header{
   
 margin-bottom: 5rem;
 }
+
 .navbar{
     display:block;
 }
@@ -87,7 +92,7 @@ color: #29FAF8;
     color: #29FAF8;
     
 }
-@media(max-width:996){
+@media(max-device-width:996){
     #lets-work{
         padding: 1rem 0 1rem;
         width: 14rem;
@@ -95,7 +100,7 @@ color: #29FAF8;
 }
 
 
-@media(max-width: 996px){
+@media(max-device-width: 996px){
     #lets-work{
         padding: 1rem 0 1rem;
         width: 14rem;
@@ -223,11 +228,19 @@ align-items: center;
     margin-left: auto;
     margin-top: 10%;
 }
-@media(max-width: 1200px){
+@media(max-device-width: 1200px){
     .header-content{
         max-width: 100%;
     }
 }
+
+@media(max-device-width: 996px){
+    .header-content-text-wrapper h3{
+       font-size: 30px;
+    }
+}
+
+
 
 .intro{
     color: white;
@@ -314,12 +327,37 @@ justify-content: center;
 }
 
 
-@media(max-width: 800px){
+@media(max-device-width: 800px){
     .about-me-image{
         margin: auto;
     }
-}
-@media(max-width: 315px){
+    .all-me{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 2rem;
+    }
+    .about-me-text-wrap h3{
+        text-align: center;
+    }
+    .about-me-text-wrap{
+        max-width: 80%;
+        text-align: center;
+        margin: auto;
+        font-size: 30px;
+      }
+      .about-me-resume{
+          margin: auto;
+          height: 6rem;
+          width: 25rem;
+      }
+      .who-I-am p{ 
+font-size: 30px;
+      }
+    }
+
+@media(max-device-width: 315px){
     .me-img{
         width: 100%;
     }
@@ -408,41 +446,27 @@ My services css
 .service-icon{
     height: 60px;
 }
-/*
-#no-code-service-img-wrapper{
-    background-color: rgba(168, 166, 24, 0.555);
-}
-#digital-marketing-service-img-wrapper{
-    background-color: rgba(255, 59, 239, 0.438);
-}
-#web-dev-service-img-wrapper{
-    background-color: rgba(243, 105, 105, 0.349);
-}
-.service-img-wrapper{
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.my-services-title{
-    display: flex;
-    align-items: center;
-    
+@media(max-device-width: 996px){
+    .service-card{
+        width: 500px;
+        height: 100%;
+        padding: 3rem;
+        font-size: 30px;
     }
-.my-services-title p{
-        margin-right: 1rem;
-    }
-    
-.my-services-bar{
-        height: 3px;
-        background-color: #29FAF8;
-        width: 100px;
 }
-*/
 
+@media(max-device-width: 996px){
+    .service-card{
+        width: 500px;
+        height: 100%;
+        padding: 3rem;
+        font-size: 30px;
+    }
 
+    .my-services-title p{
+        font-size: 30px;
+    }
+}
 /*
 My workflow css
 */
@@ -527,7 +551,17 @@ width: auto;
        cursor: pointer;
        transform-origin: center;
    }
-
+   @media(max-device-width: 996px){
+    .my-workflow-title p{
+        font-size: 30px;
+    }
+    .work-flow-card{
+        width: 400px;
+        height: 100%;
+        padding: 3rem;
+        font-size: 30px;
+    }
+}
 
 /*
 My projects
@@ -576,6 +610,15 @@ flex-direction: column;
         width: 100px;
 }
 
+@media(max-device-width: 996px){
+    .my-project-title p{
+        font-size: 30px;
+    }
+    .ig-feed-image{
+        width: 400px !important;
+    }
+}
+
 /*
 contact info
 
@@ -601,9 +644,10 @@ contact info
     flex-direction: column;
 }
 
-@media(max-width: 800px){
+@media(max-device-width: 800px){
     .social-links{
-        margin: 2rem;
+        margin: 4rem;
+        font-size: 30px;
     }
 }
 
@@ -667,12 +711,13 @@ form input{
     padding-left: 1.5rem;
     background-color: #212121;
 color:#fff;
-border: .1rem solid white;
+border: .2rem solid white;
 }
 form input:focus, textarea:focus{
-    border: .1rem solid #0ff;
+    border: solid #0ff;
     box-shadow: none;
     outline: none;
+    border-width: .2rem;
 }
 
 form button{
@@ -708,20 +753,28 @@ border: none;
     background-color: white;
 }
 
-@media (max-width: 1200px){
+@media (max-device-width: 1200px){
     .contact-wrapper{
         justify-content: center;
         width: 100%;
         flex-wrap: wrap;
     }
 }
-@media (max-width: 800px){
+@media (max-device-width: 800px){
      form{
        width: 80%;
        justify-content: center;
     }
+    form input{
+        height: 4rem;
+border-width: 2px;
 }
 
+@media (max-device-width: 800px){
+    form textarea{
+      width: 100%;
+      border-width: 2px;
+   }
 /*
 footer
 
@@ -769,21 +822,26 @@ IG FEED
     margin: auto;
     width: 1140px;
 }
-@media (max-width: 1200px){
+@media (max-device-width: 1200px){
     #instafeed{
-   max-width: 100%;
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+}
+@media (max-device-width: 996px){
+    #instafeed{
+    display: grid;
+    justify-content: center;
+    width: 100%;
 }
 }
 
-@media (max-width: 345px){
+
+@media (max-device-width: 345px){
     .ig-feed-image{
    max-width: 100%;
    
 }
 }
-.alert{
-    width: 300px;
-    text-align: center;
-    background-color: #f55454a2;
-    margin: auto;
-}
+}}

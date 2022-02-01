@@ -43,13 +43,13 @@ app.get("/", (req, res) =>{
     res.render('pages/index');
 });
 
-app.get("pages/index", (req, res) =>{
+app.get("https://anthony-ivery-portfolio.herokuapp.com/", (req, res) =>{
     ContactForm.find({}, (err, contactForms) =>{
         res.send(contactForms)
     }) 
 });
 
-app.post("/",[   
+app.post("https://anthony-ivery-portfolio.herokuapp.com/",[   
     check('name', 'A name is required' )
     .trim()
     .isLength({min:3})
@@ -82,7 +82,7 @@ app.post("/",[
           alert
         })
         console.log(alert)
-
+    
     // return res.status(400).json({ errors: errors.array() });
     }else{
         const contactForm = new ContactForm(req.body)
