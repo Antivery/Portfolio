@@ -762,7 +762,7 @@ border: none;
 }
 @media (max-device-width: 800px){
      form{
-       width: 80%;
+       width: 100%;
        justify-content: center;
     }
     form input{
@@ -770,11 +770,15 @@ border: none;
 border-width: 2px;
 }
 
-@media (max-device-width: 800px){
+
     form textarea{
       width: 100%;
       border-width: 2px;
    }
+   form button{
+       font-size: 30px;
+   }
+}
 /*
 footer
 
@@ -844,4 +848,4 @@ IG FEED
    
 }
 }
-}}
+
