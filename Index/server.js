@@ -128,7 +128,7 @@ app.post("/",[
 // })
 
 
-const server = process.env.SERVER_PORT
+const server = process.env.SERVER_PORT || 8080
 
 http.listen(server, () =>{
     console.log('server is listening to port ' + server)
