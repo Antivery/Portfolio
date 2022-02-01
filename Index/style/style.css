@@ -776,3 +776,9 @@ IG FEED
    
 }
 }
+.alert{
+    width: 300px;
+    text-align: center;
+    background-color: #f55454a2;
+    margin: auto;
+}

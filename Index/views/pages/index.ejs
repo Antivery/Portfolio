@@ -10,7 +10,7 @@
         <script type="text/javascript"  src="js/app.js"></script>
         <script src="/socket.io/socket.io.js"></script>
         <link rel="stylesheet" type="text/css" href="style/style.css"/>
-        <title>Anthony Ivery</title>
+        <title></title>
     </head>
     <body>
     <header id="home">
@@ -69,7 +69,7 @@
                 I am a veteran and Professional Web developer<br>
             </p>    
             </div>
-            <img src="content/img/IMG_BE9C1F1543F3-1.png" alt="" class="me">
+            <img src="/content/img/IMG_BE9C1F1543F3-1.png" alt="" class="me">
         </div>
     </header>
 
@@ -216,7 +216,7 @@
                     <img class="workflow-icon"src="content/img/coding-language.png" alt="">
                 </div>
                 
-                <h6 class="workflow-title">implament</h6>
+                <h6 class="workflow-title">Implament</h6>
                 <p class="workflow-details">
                     After designing, I deliver for implementation.
                 </p>
@@ -247,7 +247,15 @@
             <span class="my-workflow-bar"></span>
 
         </div>
-       
+        <% if(typeof alert != 'undefined'){ %>
+            <% alert.forEach((error)=>{ %>  
+        <div class="alert alert-danger" role="alert">
+            <%= error.msg %> 
+            A simple danger alert—check it out!
+          </div>
+
+      <% })  %>   
+    <% } %> 
         <div class="contact-wrapper">
             <div class="social-links">
                 <div class="contact-info">
@@ -277,6 +285,11 @@
             <div class="error">
             
             </div>
+
+          
+
+
+              
             <form action="" id="contact-form" class="contact-form" method="post">
             <input name="UserName" type="text" id="name" placeholder="First Name">
             <div class="email-phone-wrapper">
@@ -296,9 +309,6 @@
         </div>
         </div>
          </div>
-       
-
-
        </div>
     </main>
     <script type="text/javascript"  src="js/front-end.js"></script>

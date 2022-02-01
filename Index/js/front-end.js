@@ -5,7 +5,6 @@ const menuLinks = document.querySelector('.navbar-nav');
 const mobileMenuToggle = () =>{
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
-    
 };
 menu.addEventListener('click', mobileMenuToggle);
 
@@ -72,6 +71,7 @@ if(elem){
  window.addEventListener('scroll', highlightNavItem);
  window.addEventListener('click', highlightNavItem );
  
+
 
 
  

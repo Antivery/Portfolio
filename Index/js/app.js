@@ -3,16 +3,23 @@ $(() => {
  // email submission
     $('#send').click((event) =>{
         event.preventDefault();
+
+        const nameFeild = document.querySelector('#name').value.trim()
+        const emailFeild = document.querySelector('#e-mail').value.trim()
+        const phoneFeild = document.querySelector('#phoNo').value.trim()
+        const msgFeild = document.querySelector('#message').value.trim()
+
         var contactForm = 
         { 
-            name: $("#name").val(), 
-            email: $("#e-mail").val(),
-            phoneNumber: $("#phoNo").val(),
-            message: $("#message").val()
+            name:nameFeild,
+            email:emailFeild,
+            phoneNumber: phoneFeild,
+            message: msgFeild
         }
         console.log(contactForm)
         postContactForm(contactForm)
         document.getElementById("contact-form").reset()
+
     })
     getContactForm()
 })
@@ -29,7 +36,7 @@ $.get("http://localhost:3000/",(data) =>{
 }
 
 function postContactForm(contactForm){
-    $.post("http://localhost:3000/contactForm",contactForm)}
+    $.post("http://localhost:3000/",contactForm)}
     
 
 
