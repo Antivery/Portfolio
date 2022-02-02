@@ -49,7 +49,7 @@ app.get("https://anthony-ivery-portfolio.herokuapp.com/", (req, res) =>{
     }) 
 });
 
-app.post("https://anthony-ivery-portfolio.herokuapp.com/",[   
+app.post("/",[   
     check('name', 'A name is required' )
     .trim()
     .isLength({min:3})
