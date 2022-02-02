@@ -43,7 +43,7 @@ app.get("/", (req, res) =>{
     res.render('pages/index');
 });
 
-app.get("https://anthony-ivery-portfolio.herokuapp.com/", (req, res) =>{
+app.get("pages/index", (req, res) =>{
     ContactForm.find({}, (err, contactForms) =>{
         res.send(contactForms)
     }) 
@@ -81,8 +81,8 @@ app.post("/",[
         res.render('pages/index', {
           alert
         })
-        console.log(alert)
-    
+        console.log(errors.array())
+
     // return res.status(400).json({ errors: errors.array() });
     }else{
         const contactForm = new ContactForm(req.body)
@@ -128,7 +128,7 @@ app.post("/",[
 // })
 
 
-const server = process.env.PORT || 8080
+const server = process.env.SERVER_PORT
 
 http.listen(server, () =>{
     console.log('server is listening to port ' + server)
