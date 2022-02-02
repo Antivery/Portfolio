@@ -49,7 +49,7 @@ app.get("https://anthony-ivery-portfolio.herokuapp.com/", (req, res) =>{
     }) 
 });
 
-app.post("/",[   
+app.post("https://anthony-ivery-portfolio.herokuapp.com/",[   
     check('name', 'A name is required' )
     .trim()
     .isLength({min:3})
@@ -77,14 +77,8 @@ app.post("/",[
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
 
-        const alert = errors.array()
-        res.render('pages/index', {
-          alert
-        })
-        console.log(alert)
-    
-    // return res.status(400).json({ errors: errors.array() });
-    }else{
+    return res.status(400).json({ errors: errors.array() });
+    }
         const contactForm = new ContactForm(req.body)
 
         contactForm.save((err) =>{
@@ -118,7 +112,7 @@ app.post("/",[
             console.log('success');
         }
     })
-    }
+    
  
    
 })
