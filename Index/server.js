@@ -28,7 +28,7 @@ app.use(flash());
 app.set('trust proxy', 1);
 
 
-mongoose.connect(process.env.MONGODB_CONNECTION,(err) => {
+mongoose.connect(process.env.MONGO_URI,(err) => {
     console.log('connected' , err);
 })
 
@@ -49,7 +49,7 @@ app.get("https://anthony-ivery-portfolio.herokuapp.com/", (req, res) =>{
     }) 
 });
 
-app.post("https://anthony-ivery-portfolio.herokuapp.com/",[   
+app.post("/",[   
     check('name', 'A name is required' )
     .trim()
     .isLength({min:3})
@@ -98,7 +98,7 @@ app.post("https://anthony-ivery-portfolio.herokuapp.com/",[
         }
     })
     const mailOptions = {
-        from: req.body.email,
+        from: process.env.EMAIL_ADDRESS,
         to:process.env.EMAIL_ADDRESS,
         subject:`Message from ${req.body.email} ${req.body.name}`,
         text:req.body.message
