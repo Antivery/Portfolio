@@ -49,7 +49,7 @@ app.get("https://anthony-ivery-portfolio.herokuapp.com/", (req, res) =>{
     }) 
 });
 
-app.post("/",[   
+app.post("https://anthony-ivery-portfolio.herokuapp.com/",[   
     check('name', 'A name is required' )
     .trim()
     .isLength({min:3})
@@ -98,7 +98,7 @@ app.post("/",[
         }
     })
     const mailOptions = {
-        from: process.env.EMAIL_ADDRESS,
+        from: req.body.email,
         to:process.env.EMAIL_ADDRESS,
         subject:`Message from ${req.body.email} ${req.body.name}`,
         text:req.body.message
