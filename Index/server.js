@@ -43,13 +43,13 @@ app.get("/", (req, res) =>{
     res.render('pages/index');
 });
 
-app.get("https://anthony-ivery-portfolio.herokuapp.com/", (req, res) =>{
+app.get("/", (req, res) =>{
     ContactForm.find({}, (err, contactForms) =>{
         res.send(contactForms)
     }) 
 });
 
-app.post("https://anthony-ivery-portfolio.herokuapp.com/",[   
+app.post("/",[   
     check('name', 'A name is required' )
     .trim()
     .isLength({min:3})
@@ -100,8 +100,9 @@ app.post("https://anthony-ivery-portfolio.herokuapp.com/",[
     const mailOptions = {
         from: req.body.email,
         to:process.env.EMAIL_ADDRESS,
-        subject:`Message from ${req.body.email} ${req.body.name}`,
-        text:req.body.message
+        subject:`Protfolio form submission from ${req.body.name}`,
+        text:`${req.body.email}
+         ${req.body.message}`
     }
     transporter.sendMail(mailOptions, (error, info) =>{
         if(error){
