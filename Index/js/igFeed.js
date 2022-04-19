@@ -1,6 +1,6 @@
  var feed = new Instafeed({
       get: 'user',
-      accessToken: 'IGQVJVM1NBUUFTMjJuUXBlUzh2NVJPZAWhDaTJ1aGt4LXg1UUt6blFGZAFJ5YUd3VGl1TVc4aS0xbE9xd2psZAkpfR1BWZAjlzQzNoSXEwQmxDdTRyeUZAoTkNjdVV6ZA1BGMDFoRFJGY0N5VWlIeEx2V0dpZAgZDZD',
+      accessToken: 'IGQVJWaElITFJoYzllbUlIVk4zUDJ0NFR0NWlRWVFFZAGNrZAFZAxeDc3TnZADbWs3RmhyTE1DUVVoempBbC1WUENXVmlERGN4RXBtSTF1WC1oaEJtdUhOSElPSVg1bG9JZAHlsLVVOUDU0b3Vpb1N1LVJXcAZDZD',
       userId: '8459256871',
       resolution: 'standard_resolution',
       limit: 9,
