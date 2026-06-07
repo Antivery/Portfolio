@@ -27,6 +27,5 @@ jobs:
 
       - name: Deploy to Elastic Beanstalk
         run: |
-          eb init AI-Portfolio --region us-east-1 --platform "Node.js 24 running on 64bit Amazon Linux 2023" --no-interactive
-          eb use portfolio-env
-          eb deploy
+          eb use portfolio-env || true
+          eb deploy portfolio-env
