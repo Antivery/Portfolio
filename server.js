@@ -27,10 +27,9 @@ saveUninitialized: false
 app.use(flash());
 app.set('trust proxy', 1);
 
-
-mongoose.connect(process.env.MONGO_URI,(err) => {
-    console.log('connected' , err);
-})
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 
 const ContactForm = mongoose.model('ContactForm', {
     name: String,
