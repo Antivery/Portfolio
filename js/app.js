@@ -1,43 +1,37 @@
 
 $(() => {
- // email submission
-    $('#send').click((event) =>{
+    $('#contact-form').submit((event) => {
         event.preventDefault();
 
-        const nameFeild = document.querySelector('#name').value.trim()
-        const emailFeild = document.querySelector('#e-mail').value.trim()
-        const phoneFeild = document.querySelector('#phoNo').value.trim()
-        const msgFeild = document.querySelector('#message').value.trim()
+        const nameField = document.querySelector('#name').value.trim();
+        const emailField = document.querySelector('#e-mail').value.trim();
+        const phoneField = document.querySelector('#phoNo').value.trim();
+        const msgField = document.querySelector('#message').value.trim();
 
-        var contactForm = 
-        { 
-            name:nameFeild,
-            email:emailFeild,
-            phoneNumber: phoneFeild,
-            message: msgFeild
-        }
-        console.log(contactForm)
-        postContactForm(contactForm)
-        document.getElementById("contact-form").reset()
+        const contactForm = {
+            name: nameField,
+            email: emailField,
+            phoneNumber: phoneField,
+            message: msgField
+        };
 
-    })
-    getContactForm()
-})
+        console.log('Submitting contact form', contactForm);
+        postContactForm(contactForm);
+    });
+});
 
-//  function addContactForm(contactForm){
-//      $("#message-div").append(`<h3>${contactForm.email}</h3> <p>${contactForm.name}</p> <p>${contactForm.phoneNumber}</p> <p>${contactForm.message}</p>`)
-//  }
-
-function getContactForm(contactForm){
-$.get("portfolio-env.eba-xjnhsbcc.us-east-1.elasticbeanstalk.com/",(data) =>{
-    data.forEach(contactForm)
-})
-
+function postContactForm(contactForm) {
+    const url = `${window.location.origin}/`;
+    $.post(url, contactForm)
+        .done(() => {
+            alert('Message sent successfully!');
+            document.getElementById('contact-form').reset();
+        })
+        .fail((jqXHR, textStatus, errorThrown) => {
+            console.error('Contact form submit failed', textStatus, errorThrown, jqXHR.responseText);
+            alert('Unable to send message right now. Please try again later.');
+        });
 }
-
-function postContactForm(contactForm){
-    $.post("https://portfolio-env.eba-xjnhsbcc.us-east-1.elasticbeanstalk.com/",contactForm)}
-    
 
 
 
