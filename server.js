@@ -43,9 +43,12 @@ app.get("/", (req, res) =>{
     res.render('pages/index');
 });
 
-app.get("/", (req, res) =>{
+app.get("/submissions", (req, res) =>{
     ContactForm.find({}, (err, contactForms) =>{
-        res.send(contactForms)
+        if (err) {
+            return res.status(500).json({ error: 'Unable to load submissions' });
+        }
+        res.json(contactForms);
     }) 
 });
 
@@ -82,12 +85,13 @@ app.post("/",[
         const contactForm = new ContactForm(req.body)
 
         contactForm.save((err) =>{
-            if(err)
-                sendStatus(500)
-    
-                //  io.emit('contactForm', req.body)
-                 res.sendStatus(200)
-    
+            if(err) {
+                console.error(err);
+                return res.sendStatus(500);
+            }
+
+            // io.emit('contactForm', req.body)
+            res.sendStatus(200);
         })
         
     const transporter = nodemailer.createTransport({

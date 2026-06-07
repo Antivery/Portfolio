@@ -29,14 +29,14 @@ $(() => {
 //  }
 
 function getContactForm(contactForm){
-$.get("https://anthony-ivery-portfolio.herokuapp.com/",(data) =>{
+$.get("portfolio-env.eba-xjnhsbcc.us-east-1.elasticbeanstalk.com/",(data) =>{
     data.forEach(contactForm)
 })
 
 }
 
 function postContactForm(contactForm){
-    $.post("https://anthony-ivery-portfolio.herokuapp.com/",contactForm)}
+    $.post("https://portfolio-env.eba-xjnhsbcc.us-east-1.elasticbeanstalk.com/",contactForm)}
     
 
 
