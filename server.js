@@ -52,75 +52,60 @@ app.get("/submissions", (req, res) =>{
     }) 
 });
 
-app.post("/",[   
-    check('name', 'A name is required' )
-    .trim()
-    .isLength({min:3})
-    .escape(),
+app.post('/', [
+    check('name', 'A name is required')
+      .trim()
+      .isLength({ min: 3 })
+      .escape(),
 
     check('email', 'Your Email is required')
-    .trim()
-    .isLength({min:3})
-    .escape()
-    .isEmail()
-    .normalizeEmail(),
-   
-    check('phoneNumber', 'Enter A valid phone number')
-    .trim()
-    .isLength({min:10})
-    .escape(),
+      .trim()
+      .isLength({ min: 3 })
+      .escape()
+      .isEmail()
+      .normalizeEmail(),
+
+    check('phoneNumber', 'Enter a valid phone number')
+      .trim()
+      .isLength({ min: 10 })
+      .escape(),
 
     check('message', 'A message is required')
-    .trim()
-    .isLength({min:5})
-    .escape()
-],
-(req, res) =>{
- 
-    const errors = validationResult(req)
+      .trim()
+      .isLength({ min: 5 })
+      .escape()
+], async (req, res) => {
+    const errors = validationResult(req);
     if (!errors.isEmpty()) {
-
-    return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ errors: errors.array() });
     }
-        const contactForm = new ContactForm(req.body)
 
-        contactForm.save((err) =>{
-            if(err) {
-                console.error(err);
-                return res.sendStatus(500);
+    try {
+        const contactForm = new ContactForm(req.body);
+        await contactForm.save();
+
+        const transporter = nodemailer.createTransport({
+            service: process.env.EMAIL_SERVICE,
+            auth: {
+                user: process.env.EMAIL_ADDRESS,
+                pass: process.env.EMAIL_PASS
             }
+        });
 
-            // io.emit('contactForm', req.body)
-            res.sendStatus(200);
-        })
-        
-    const transporter = nodemailer.createTransport({
-        service:process.env.EMAIL_SERVICE,
-        auth:{
-            user:process.env.EMAIL_ADDRESS,
-            pass:process.env.EMAIL_PASS
-        }
-    })
-    const mailOptions = {
-        from: req.body.email,
-        to:process.env.EMAIL_ADDRESS,
-        subject:`Protfolio form submission from ${req.body.name}`,
-        text:`${req.body.email}
-         ${req.body.message}`
+        const mailOptions = {
+            from: req.body.email,
+            to: process.env.EMAIL_ADDRESS,
+            subject: `Portfolio form submission from ${req.body.name}`,
+            text: `${req.body.email}\n${req.body.message}`
+        };
+
+        await transporter.sendMail(mailOptions);
+        res.sendStatus(200);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Unable to send message' });
     }
-    transporter.sendMail(mailOptions, (error, info) =>{
-        if(error){
-            console.log(error)
-        res.send('error')
-        }else {
-            console.log('Email sent:' + info.response);
-            console.log('success');
-        }
-    })
-    
- 
-   
-})
+});
 
 // io.on('connection', (socket) => {
 //     console.log('user connected')
